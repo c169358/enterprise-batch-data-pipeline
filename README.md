@@ -1,5 +1,5 @@
-Enterprise Batch Data Pipeline (AWS Architecture Simulation)
-Project Overview
+## Enterprise Batch Data Pipeline (AWS Architecture Simulation)
+## Project Overview
 
 This project simulates an enterprise-grade batch data pipeline designed for processing daily banking transaction data.
 
@@ -67,3 +67,46 @@ Orchestrated by: pipeline.py
 - Basic anomaly detection
 - Idempotent load behavior
 - Orchestration separation
+
+## Enterprise Batch Data Pipeline Architecture
+
+Raw Data (CSV)
+      ↓
+Extraction Layer (extract.py)
+      ↓
+Transformation Layer (transform.py)
+      - Duplicate removal
+      - Data validation
+      - Classification logic
+      - Anomaly detection
+      ↓
+Staging Table (transactions_staging)
+      ↓
+Merge / Upsert Logic
+      ↓
+Main Warehouse Table (transactions)
+
+Orchestrated via: pipeline.py
+Config-driven: config/config.json
+Tested with: pytest
+
+## Key Engineering Features
+
+- Modular ETL architecture
+- Environment-based configuration (dev/prod)
+- CLI-driven execution
+- Structured logging
+- Basic anomaly detection
+- Staging + merge (idempotent load)
+- Unit testing with pytest
+- 
+## How to Run
+
+1. Install dependencies:
+   pip install pandas pytest
+
+2. Run pipeline:
+   python scripts/pipeline.py data/transactions_raw.csv dev
+
+3. Run unit tests:
+   pytest

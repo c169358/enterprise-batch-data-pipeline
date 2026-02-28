@@ -1,4 +1,4 @@
-## Enterprise Batch Data Pipeline (AWS Architecture Simulation)
+## Enterprise Batch Data Pipeline 
 ## Project Overview
 
 This project simulates an enterprise-grade batch data pipeline designed for processing daily banking transaction data.
@@ -110,3 +110,4 @@ Tested with: pytest
 
 3. Run unit tests:
    pytest
+

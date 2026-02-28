@@ -46,3 +46,24 @@ scripts/    - ETL logic
 data/       - Raw input files
 sql/        - Warehouse queries
 docs/       - Architecture diagrams
+## Pipeline Architecture
+
+Raw Data (CSV)
+      ↓
+Extraction Layer (extract.py)
+      ↓
+Transformation Layer (transform.py)
+      ↓
+Load Layer (load.py)
+      ↓
+SQLite Warehouse (warehouse.db)
+
+Orchestrated by: pipeline.py
+### Production-Style Features Implemented
+
+- Modular transformation functions
+- Duplicate detection
+- Structured logging
+- Basic anomaly detection
+- Idempotent load behavior
+- Orchestration separation

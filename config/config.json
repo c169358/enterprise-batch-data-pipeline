@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "anomaly_threshold": 0.5,
+    "database_path": "../data/warehouse.db"
+  },
+  "prod": {
+    "anomaly_threshold": 0.3,
+    "database_path": "../data/warehouse.db"
+  }
+}
